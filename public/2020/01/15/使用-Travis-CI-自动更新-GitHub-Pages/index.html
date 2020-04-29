@@ -1,0 +1,1333 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  <title>使用 Travis CI 自动更新 GitHub Pages | 一觉睡到小时候</title>
+  
+  
+  <meta name="description" content="三级代码，一级Bug！">
+  
+
+  
+  <link rel="alternate" href="/atom.xml" title="一觉睡到小时候">
+  
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- meta -->
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.10.1/css/all.min.css">
+  
+
+  
+  <link rel="shortcut icon" type='image/x-icon' href="https://cdn.jsdelivr.net/gh/xaoxuu/assets@master/favicon/favicon.ico">
+  
+
+  
+    
+<link rel="stylesheet" href="/style.css">
+
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+  
+  
+<meta name="generator" content="Hexo 4.1.0"><link rel="alternate" href="/atom.xml" title="一觉睡到小时候" type="application/atom+xml">
+</head>
+
+<body>
+  
+  
+  <div class="cover-wrapper">
+    <cover class='cover post half'>
+      
+        
+  <h1 class='title'>一觉睡到小时候</h1>
+
+
+  <div class="m_search">
+    <form name="searchform" class="form u-search-form">
+      <input type="text" class="input u-search-input" placeholder="搜索" />
+      <i class="icon fas fa-search fa-fw"></i>
+    </form>
+  </div>
+
+<div class='menu navgation'>
+  <ul class='h-list'>
+    
+  </ul>
+</div>
+
+      
+    </cover>
+    <header class="l_header material">
+  <div id="loading-bar-wrapper">
+    <div id="loading-bar" class="material"></div>
+  </div>
+
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
+      <a class="logo flat-box" href='/' >
+        
+          一觉睡到小时候
+        
+      </a>
+			<div class='menu navgation'>
+				<ul class='h-list'>
+          
+  					
+  						<li>
+								<a class="nav flat-box" href="/"
+                  
+                  
+                  id="home">
+									<i class='fas fa-grin fa-fw'></i>&nbsp;首页
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/categories/"
+                  
+                    rel="nofollow"
+                  
+                  
+                  id="categories">
+									<i class='fas fa-folder-open fa-fw'></i>&nbsp;分类
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/tags/"
+                  
+                    rel="nofollow"
+                  
+                  
+                  id="tags">
+									<i class='fas fa-hashtag fa-fw'></i>&nbsp;标签
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/archives/"
+                  
+                    rel="nofollow"
+                  
+                  
+                  id="archives">
+									<i class='fas fa-archive fa-fw'></i>&nbsp;归档
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/links/"
+                  
+                    rel="nofollow"
+                  
+                  
+                  id="links">
+									<i class='fas fa-link fa-fw'></i>&nbsp;友链
+								</a>
+							</li>
+      			
+      		
+				</ul>
+			</div>
+
+			
+				<div class="m_search">
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="搜索" />
+						<i class="icon fas fa-search fa-fw"></i>
+					</form>
+				</div>
+			
+			<ul class='switcher h-list'>
+				
+					<li class='s-search'><a class="fas fa-search fa-fw" href='javascript:void(0)'></a></li>
+				
+				<li class='s-menu'><a class="fas fa-bars fa-fw" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+
+		<div class='nav-sub container container--flex'>
+			<a class="logo flat-box"></a>
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a class="flat-btn fas fa-comments fa-fw" href='javascript:void(0)'></a></li>
+        
+          <li class='s-toc'><a class="flat-btn fas fa-list fa-fw" href='javascript:void(0)'></a></li>
+        
+			</ul>
+		</div>
+	</div>
+</header>
+	<aside class="menu-phone">
+    <header>
+		<nav class="menu navgation">
+      <ul>
+        
+          
+            <li>
+							<a class="nav flat-box" href="/"
+                
+                
+                id="home">
+								<i class='fas fa-grin fa-fw'></i>&nbsp;首页
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/categories/"
+                
+                  rel="nofollow"
+                
+                
+                id="categories">
+								<i class='fas fa-folder-open fa-fw'></i>&nbsp;分类
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/tags/"
+                
+                  rel="nofollow"
+                
+                
+                id="tags">
+								<i class='fas fa-hashtag fa-fw'></i>&nbsp;标签
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/archives/"
+                
+                  rel="nofollow"
+                
+                
+                id="archives">
+								<i class='fas fa-archive fa-fw'></i>&nbsp;归档
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/links/"
+                
+                  rel="nofollow"
+                
+                
+                id="links">
+								<i class='fas fa-link fa-fw'></i>&nbsp;友链
+							</a>
+            </li>
+          
+       
+      </ul>
+		</nav>
+    </header>
+	</aside>
+<script>setLoadingBarProgress(40);</script>
+
+  </div>
+
+
+  <div class="l_body">
+    <div class='body-wrapper'>
+      <div class='l_main'>
+  
+
+  <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
+    
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  
+    <h1 class="title">
+      <a href="/2020/01/15/%E4%BD%BF%E7%94%A8-Travis-CI-%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0-GitHub-Pages/">
+        使用 Travis CI 自动更新 GitHub Pages
+      </a>
+    </h1>
+  
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    
+      <a href="http://www.lida1024.top" rel="nofollow">
+        
+          <i class="fas fa-user" aria-hidden="true"></i>
+        
+        <p>少年闰土</p>
+      </a>
+    
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2020-01-15</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/Dev/Hexo/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>Dev&nbsp;/&nbsp;Hexo</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+  
+    <div class="new-meta-item browse busuanzi">
+      <a class='notlink'>
+        <i class="fas fa-eye" aria-hidden="true"></i>
+        <p>
+          <span id="busuanzi_value_page_pv">
+            <i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i>
+          </span>
+        </p>
+      </a>
+    </div>
+  
+
+
+          
+        
+          
+            
+  
+    <div class="new-meta-item wordcount">
+      <a class='notlink'>
+        <i class="fas fa-keyboard" aria-hidden="true"></i>
+        <p>字数统计:</p>
+        <p>998字</p>
+      </a>
+    </div>
+    <div class="new-meta-item readtime">
+      <a class='notlink'>
+        <i class="fas fa-hourglass-half" aria-hidden="true"></i>
+        <p>阅读时长≈</p>
+        <p>3分</p>
+      </a>
+    </div>
+  
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+    <section class="article typo">
+      <div class="article-entry" itemprop="articleBody">
+        <p><img src="https://cdn.jsdelivr.net/gh/coder-lida/CDN/img/hexo-1.png" alt=""></p>
+<a id="more"></a>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Github Pages 不能运行动态程序，只能输出一些静态内容。因此 Github Pages 非常适合用于前端项目的展示。可用于存放项目介绍、项目文档或者个人博客。本文介绍了怎么用 Travis CI 自动化部署 Github Pages。</p>
+<h2 id="CI"><a href="#CI" class="headerlink" title="CI"></a>CI</h2><p>持续集成（Continuous integration）是一种软件开发实践，即团队开发成员经常集成他们的工作，通常每个成员每天至少集成一次，也就意味着每天可能会发生多次集成。每次集成都通过自动化的构建（包括编译，发布，自动化测试）来验证，从而尽早地发现集成错误。目前 github 开源项目用的较多的 CI 主要是 Circle CI 和 Travis CI，两者都是利用容器技术来适配不同项目环境。</p>
+<h2 id="GitHub-Pages"><a href="#GitHub-Pages" class="headerlink" title="GitHub Pages"></a>GitHub Pages</h2><p>hexo虽然可以方便地部署github静态博客，但是仅仅是把最终生成的html保存在repository中，像原始的Markdown文件，hexo配置文件，主题配置文件，修改文件都仅仅是保存在本地。这样不利于保存，也无法查看每篇博客的修改历史。<br>在github上搭blog最大的问题就是，每次提交都需要先hexo g，然后再hexo d生成文件，这样哪怕是改一个小的地方都需要重新编译全部blog。</p>
+<h2 id="Travis-CI-amp-GitHub-Pages"><a href="#Travis-CI-amp-GitHub-Pages" class="headerlink" title="Travis CI  &amp; GitHub Pages"></a>Travis CI  &amp; GitHub Pages</h2><p>以我的博客为例<br><code>coder-lida.github.io</code>:博客静态文件仓库<br><code>blog-source</code>:文档源码仓库<br>文档源码放置在blog-source仓库，最终部署文件在 coder-lida.github.io仓库。当在 blog-source仓库更改某些内容之后，通过运行 hexo g来生成最终部署的 HTML 文件到 public 目录，随后再进入 public 目录初始化 git 仓库、添加文件、提交文件，最后将提交强制推送到远程coder-lida.github.io仓库。</p>
+<p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy8xMjU1MzI0OS01MTFmNDM0YWRjZDQ0YTJhLnBuZw?x-oss-process=image/format,png" alt="图片.png"></p>
+<h2 id="Start-Travis-CI"><a href="#Start-Travis-CI" class="headerlink" title="Start Travis CI"></a>Start Travis CI</h2><h3 id="travis-yml"><a href="#travis-yml" class="headerlink" title=".travis.yml"></a>.travis.yml</h3><p><a href="https://hexo.io/docs/github-pages" target="_blank" rel="noopener">Hexo官网配置</a>,官方配置是在同一个仓库的不同分支来实现的。我没用这种方式，而是创建了2个仓库，一个放部署的网页，另一个放blog的源文件，包括post和themes。</p>
+<h3 id="注册并设置Travis-CI"><a href="#注册并设置Travis-CI" class="headerlink" title="注册并设置Travis CI"></a>注册并设置Travis CI</h3><p><a href="https://travis-ci.org" target="_blank" rel="noopener">Travis CI官网</a><br>点击右上角使用Github登录的按钮<br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy8xMjU1MzI0OS0yMjJmMzAzYzlhN2QwZjBiLnBuZw?x-oss-process=image/format,png" alt="图片.png"><br>登录成功后<br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy8xMjU1MzI0OS1mNTQwMTY4MmY3YWI5YjA1LnBuZw?x-oss-process=image/format,png" alt="图片.png"><br>选中博客的源文件仓库，点击Setting<br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy8xMjU1MzI0OS1hZjcyOTY1ODJmMTgyYmY0LnBuZw?x-oss-process=image/format,png" alt="图片.png"></p>
+<h3 id="关于GH-TOKEN"><a href="#关于GH-TOKEN" class="headerlink" title="关于GH_TOKEN"></a>关于GH_TOKEN</h3><p>登录到GitHub，点击右上角头像框，选择Settings<br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy8xMjU1MzI0OS01Y2ZmNjFjMDlmMmFiMzdkLnBuZw?x-oss-process=image/format,png" alt="图片.png"><br>选择Developer settings<br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy8xMjU1MzI0OS00ODkyY2QxNTNlMmRiOTIxLnBuZw?x-oss-process=image/format,png" alt="图片.png"><br>添加一个token<br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy8xMjU1MzI0OS03ODQ4NTNiYjJiM2RhZjJiLnBuZw?x-oss-process=image/format,png" alt="图片.png"><br>填写token description，比如叫hexo deploy.<br>勾选上授予的权限，比如我勾选的是repo和gist，然后create.<br>将产生的token串复制保留下来，后面会使用到,如果丢失，只能重新产生。<br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy8xMjU1MzI0OS1hOTA1NWVkNmMzYzMxZDAxLnBuZw?x-oss-process=image/format,png" alt="图片.png"></p>
+<p>将生成的token设置到Travis CI作为环境变量。<br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy8xMjU1MzI0OS0xMzU0NTgxZGEwZDJmMDQzLnBuZw?x-oss-process=image/format,png" alt="图片.png"></p>
+<p>到此Travis CI设置完成。</p>
+<h3 id="添加-travis-yml"><a href="#添加-travis-yml" class="headerlink" title="添加 .travis.yml"></a>添加 .travis.yml</h3><p>先贴出我的配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">language: node_js #设置语言</span><br><span class="line">node_js: stable # nodejs版本</span><br><span class="line">branches:</span><br><span class="line">  only:</span><br><span class="line">    - master #只监测master分支</span><br><span class="line">cache:</span><br><span class="line">    apt: true</span><br><span class="line">    directories:</span><br><span class="line">        - node_modules # 缓存不经常更改的内容</span><br><span class="line">before_install:</span><br><span class="line">  - git config --global user.name &quot;your name&quot;  # github用户名</span><br><span class="line">  - git config --global user.email &quot;your email&quot;  # 邮箱</span><br><span class="line">  - npm install -g hexo-cli</span><br><span class="line">install:</span><br><span class="line">  - npm i</span><br><span class="line">before_script:</span><br><span class="line"># 无其他依赖项所以执行npm run build 构建就行了</span><br><span class="line">script:</span><br><span class="line">  - hexo clean  #清除</span><br><span class="line">  - hexo generate #生成</span><br><span class="line">after_script:</span><br><span class="line">  - git clone https:&#x2F;&#x2F;$&#123;GH_REF&#125; .deploy_git  # GH_REF是最下面配置的仓库地址</span><br><span class="line">  - cd .deploy_git</span><br><span class="line">  - git checkout master</span><br><span class="line">  - cd ..&#x2F;</span><br><span class="line">  - mv .deploy_git&#x2F;.git&#x2F; .&#x2F;public&#x2F;   # 这一步之前的操作是为了保留master分支的提交记录，不然每次git init的话只有1条commit</span><br><span class="line">  - cd .&#x2F;public</span><br><span class="line">  - git init</span><br><span class="line">  - git add .</span><br><span class="line">  - git commit -m &quot;Travis CI Auto Builder at &#96;date +&quot;%Y-%m-%d %H:%M&quot;&#96;&quot; # 提交记录包含时间 </span><br><span class="line">  - git push --force --quiet &quot;https:&#x2F;&#x2F;$&#123;GH_TOKEN&#125;@$&#123;GH_REF&#125;&quot; master:master #GH_TOKEN是在Travis中配置环境变量的名称</span><br><span class="line">env:</span><br><span class="line"> global:</span><br><span class="line">   - GH_REF: github.com&#x2F;coder-lida&#x2F;coder-lida.github.io.git #设置GH_REF,换成自己用户名和仓库名</span><br></pre></td></tr></table></figure>
+
+<p>哪些文件需要提交到源文件的仓库<br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy8xMjU1MzI0OS01OTU3YTcxOGFiNDg5ZmQ0LnBuZw?x-oss-process=image/format,png" alt="图片.png"></p>
+<p><code>package-lock.json</code>文件在<code>.gitignore</code>文件中加上<br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy8xMjU1MzI0OS0yODgzYmRmYjhiMmVlM2I4LnBuZw?x-oss-process=image/format,png" alt="图片.png"></p>
+<p>在经历的11次失败之后，第12次终于成功了。</p>
+<p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy8xMjU1MzI0OS05MDI3ZGVmMzM3Y2RhYWI0LnBuZw?x-oss-process=image/format,png" alt="图片.png"><br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy8xMjU1MzI0OS0xZTBjMjc4Yjg4MzNkMTg5LnBuZw?x-oss-process=image/format,png" alt="图片.png"></p>
+
+      </div>
+      
+        <br>
+        <p> <a href="https://www.jianshu.com/u/4e67854d8dc4" target="_blank" rel="noopener">简书</a> <br> <a href="https://cloud.tencent.com/developer/column/78320" target="_blank" rel="noopener">云+社区</a> <br>  <a href="https://juejin.im/user/5d3be668f265da1b8e70e70f" target="_blank" rel="noopener">掘金</a><br> <a href="https://me.csdn.net/Devilli0310" target="_blank" rel="noopener">CSDN</a><br> 微信公共号：<img src="/asset/wx/wx.jpg" alt=""></p>
+
+      
+      
+        <br>
+        
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-04-10T11:51:45+08:00">
+  <a class='notlink'>
+    <i class="fas fa-clock" aria-hidden="true"></i>
+    <p>更新于 2020年4月10日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Hexo/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>Hexo</p></a></div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lida1024.top/2020/01/15/%E4%BD%BF%E7%94%A8-Travis-CI-%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0-GitHub-Pages/&title=使用 Travis CI 自动更新 GitHub Pages | 一觉睡到小时候&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/coder-lida/CDN/img/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://www.lida1024.top/2020/01/15/%E4%BD%BF%E7%94%A8-Travis-CI-%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0-GitHub-Pages/&title=使用 Travis CI 自动更新 GitHub Pages | 一觉睡到小时候&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/coder-lida/CDN/img/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=http://www.lida1024.top/2020/01/15/%E4%BD%BF%E7%94%A8-Travis-CI-%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0-GitHub-Pages/&title=使用 Travis CI 自动更新 GitHub Pages | 一觉睡到小时候&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/coder-lida/CDN/img/weibo.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+      
+      
+          <div class="prev-next">
+              
+                  <section class="prev">
+                      <span class="art-item-left">
+                          <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页</h6>
+                          <h4>
+                              <a href="/2020/01/20/%E5%A6%82%E4%BD%95%E5%86%99%E5%87%BA%E8%AE%A9%E5%90%8C%E4%BA%8B%E6%97%A0%E6%B3%95%E7%BB%B4%E6%8A%A4%E7%9A%84%E4%BB%A3%E7%A0%81%EF%BC%9F/" rel="prev" title="如何写出让同事无法维护的代码？">
+                                
+                                    如何写出让同事无法维护的代码？
+                                
+                              </a>
+                          </h4>
+                          
+                              
+                              <h6 class="tags">
+                                  <a class="tag" href="/tags/%E8%A7%84%E8%8C%83/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 规范</a>
+                              </h6>
+                          
+                      </span>
+                  </section>
+              
+              
+                  <section class="next">
+                      <span class="art-item-right" aria-hidden="true">
+                          <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
+                          <h4>
+                              <a href="/2020/01/13/Java%E4%B8%AD%E7%9A%84clone/" rel="prev" title="Java中的clone">
+                                  
+                                      Java中的clone
+                                  
+                              </a>
+                          </h4>
+                          
+                              
+                              <h6 class="tags">
+                                  <a class="tag" href="/tags/Java%E5%9F%BA%E7%A1%80/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> Java基础</a>
+                              </h6>
+                          
+                      </span>
+                  </section>
+              
+          </div>
+      
+    </section>
+  </article>
+
+
+
+  <!-- 显示推荐文章和评论 -->
+
+
+
+  <article class="post white-box comments">
+    <section class="article typo">
+      <h4><i class="fas fa-comments fa-fw" aria-hidden="true"></i>&nbsp;评论</h4>
+      
+      
+      
+      
+        <section id="comments">
+          <div id="valine_container" class="valine_thread">
+            <i class="fas fa-spinner fa-spin fa-fw"></i>
+          </div>
+        </section>
+      
+    </section>
+  </article>
+
+
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: '使用 Travis CI 自动更新 GitHub Pages',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class='l_side'>
+  
+    
+    
+      
+      
+        
+          
+          
+            
+              <section class='widget author'>
+  <div class='content material'>
+    
+      <div class='avatar'>
+        <img class='avatar' src='https://cdn.jsdelivr.net/gh/coder-lida/CDN/img/logoImg.png'/>
+      </div>
+    
+    
+      <div class='text'>
+        
+        
+        
+          <p><span id="jinrishici-sentence">一觉睡到小时候</span></p>
+          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+        
+      </div>
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="/atom.xml"
+              class="social fas fa-rss flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://cloud.tencent.com/developer/column/78320"
+              class="social fab fa-skyatlas flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://www.jianshu.com/u/4e67854d8dc4"
+              class="social fas fa-book flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://juejin.im/user/5d3be668f265da1b8e70e70f"
+              class="social fab fa-viacoin flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://me.csdn.net/Devilli0310"
+              class="social fas fa-child flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://music.163.com/#/user/home?id=257666747"
+              class="social fas fa-headphones-alt flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+            
+              
+  <section class='widget toc-wrapper'>
+    
+<header class='material'>
+  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;本文目录</div>
+  
+    <!-- <div class='wrapper'><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div> -->
+  
+</header>
+
+    <div class='content material'>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CI"><span class="toc-text">CI</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#GitHub-Pages"><span class="toc-text">GitHub Pages</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Travis-CI-amp-GitHub-Pages"><span class="toc-text">Travis CI  &amp; GitHub Pages</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Start-Travis-CI"><span class="toc-text">Start Travis CI</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#travis-yml"><span class="toc-text">.travis.yml</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#注册并设置Travis-CI"><span class="toc-text">注册并设置Travis CI</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#关于GH-TOKEN"><span class="toc-text">关于GH_TOKEN</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#添加-travis-yml"><span class="toc-text">添加 .travis.yml</span></a></li></ol></li></ol>
+    </div>
+  </section>
+
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+              <section class='widget grid'>
+  
+<header class='material'>
+  <div><i class="fas fa-map-signs fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;站内导航</div>
+  
+</header>
+
+  <div class='content material'>
+    <ul class="grid navgation">
+      
+        <li><a class="flat-box" title="/" href="/"
+          
+            rel="nofollow"
+          
+          
+          id="home">
+          
+            <i class="fas fa-home fa-fw" aria-hidden="true"></i>
+          
+          首页
+        </a></li>
+      
+        <li><a class="flat-box" title="/categories/" href="/categories/"
+          
+            rel="nofollow"
+          
+          
+          id="categories">
+          
+            <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+          
+          分类
+        </a></li>
+      
+        <li><a class="flat-box" title="/tags/" href="/tags/"
+          
+            rel="nofollow"
+          
+          
+          id="tags">
+          
+            <i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>
+          
+          标签
+        </a></li>
+      
+        <li><a class="flat-box" title="/archives/" href="/archives/"
+          
+            rel="nofollow"
+          
+          
+          id="archives">
+          
+            <i class="fas fa-archive fa-fw" aria-hidden="true"></i>
+          
+          归档
+        </a></li>
+      
+        <li><a class="flat-box" title="/links/" href="/links/"
+          
+            rel="nofollow"
+          
+          
+          id="links">
+          
+            <i class="fas fa-link fa-fw" aria-hidden="true"></i>
+          
+          友链
+        </a></li>
+      
+    </ul>
+  </div>
+</section>
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+              
+  <section class='widget category'>
+    
+<header class='material'>
+  <div><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;文章分类</div>
+  
+    <a class="rightBtn"
+    
+      rel="nofollow"
+    
+    
+    href="/categories/"
+    title="categories/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content material'>
+      <ul class="entry">
+        
+          <li><a class="flat-box" title="/categories/Dev/" href="/categories/Dev/"><div class='name'>Dev</div><div class='badge'>(66)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/Dev/Container/" href="/categories/Dev/Container/"><div class='name'>Container</div><div class='badge'>(5)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/Dev/DataBase/" href="/categories/Dev/DataBase/"><div class='name'>DataBase</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/Dev/Frame/" href="/categories/Dev/Frame/"><div class='name'>Frame</div><div class='badge'>(13)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/Dev/Front/" href="/categories/Dev/Front/"><div class='name'>Front</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/Dev/Hexo/" href="/categories/Dev/Hexo/"><div class='name'>Hexo</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/Dev/Java/" href="/categories/Dev/Java/"><div class='name'>Java</div><div class='badge'>(34)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/Dev/Linux/" href="/categories/Dev/Linux/"><div class='name'>Linux</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/Dev/Tools/" href="/categories/Dev/Tools/"><div class='name'>Tools</div><div class='badge'>(6)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/Dev/Weixin/" href="/categories/Dev/Weixin/"><div class='name'>Weixin</div><div class='badge'>(1)</div></a></li>
+        
+      </ul>
+    </div>
+  </section>
+
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+              
+  <section class='widget tagcloud'>
+    
+<header class='material'>
+  <div><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;热门标签</div>
+  
+    <a class="rightBtn"
+    
+      rel="nofollow"
+    
+    
+    href="/tags/"
+    title="tags/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content material'>
+      <a href="/tags/CAS/" style="font-size: 14px; color: #999">CAS</a> <a href="/tags/Consul/" style="font-size: 14px; color: #999">Consul</a> <a href="/tags/ECharts/" style="font-size: 14px; color: #999">ECharts</a> <a href="/tags/Enum/" style="font-size: 14px; color: #999">Enum</a> <a href="/tags/File/" style="font-size: 14px; color: #999">File</a> <a href="/tags/Git/" style="font-size: 21.5px; color: #666">Git</a> <a href="/tags/HashMap/" style="font-size: 14px; color: #999">HashMap</a> <a href="/tags/Hexo/" style="font-size: 16.5px; color: #888">Hexo</a> <a href="/tags/Http/" style="font-size: 14px; color: #999">Http</a> <a href="/tags/IO/" style="font-size: 14px; color: #999">IO</a> <a href="/tags/JVM/" style="font-size: 19px; color: #777">JVM</a> <a href="/tags/JWT/" style="font-size: 14px; color: #999">JWT</a> <a href="/tags/Java%E5%9F%BA%E7%A1%80/" style="font-size: 21.5px; color: #666">Java基础</a> <a href="/tags/Json/" style="font-size: 14px; color: #999">Json</a> <a href="/tags/Lambda/" style="font-size: 14px; color: #999">Lambda</a> <a href="/tags/Maven/" style="font-size: 14px; color: #999">Maven</a> <a href="/tags/MyBatis/" style="font-size: 16.5px; color: #888">MyBatis</a> <a href="/tags/Mysql/" style="font-size: 14px; color: #999">Mysql</a> <a href="/tags/Nginx/" style="font-size: 14px; color: #999">Nginx</a> <a href="/tags/Sentinel/" style="font-size: 14px; color: #999">Sentinel</a> <a href="/tags/Shiro/" style="font-size: 14px; color: #999">Shiro</a> <a href="/tags/Spring/" style="font-size: 14px; color: #999">Spring</a> <a href="/tags/SpringBoot/" style="font-size: 19px; color: #777">SpringBoot</a> <a href="/tags/SpringCloud/" style="font-size: 14px; color: #999">SpringCloud</a> <a href="/tags/Thread/" style="font-size: 14px; color: #999">Thread</a> <a href="/tags/Timer/" style="font-size: 14px; color: #999">Timer</a> <a href="/tags/Token/" style="font-size: 14px; color: #999">Token</a> <a href="/tags/Tomcat/" style="font-size: 16.5px; color: #888">Tomcat</a> <a href="/tags/java14/" style="font-size: 21.5px; color: #666">java14</a> <a href="/tags/javaScript/" style="font-size: 14px; color: #999">javaScript</a> <a href="/tags/%E5%8A%A0%E5%AF%86%E8%A7%A3%E5%AF%86/" style="font-size: 16.5px; color: #888">加密解密</a> <a href="/tags/%E5%8F%8D%E5%B0%84/" style="font-size: 14px; color: #999">反射</a> <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/" style="font-size: 14px; color: #999">小程序</a> <a href="/tags/%E5%B9%B6%E5%8F%91/" style="font-size: 16.5px; color: #888">并发</a> <a href="/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/" style="font-size: 24px; color: #555">微服务</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 14px; color: #999">数据库</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" style="font-size: 14px; color: #999">数据类型</a> <a href="/tags/%E7%88%AC%E8%99%AB/" style="font-size: 14px; color: #999">爬虫</a> <a href="/tags/%E8%A7%84%E8%8C%83/" style="font-size: 21.5px; color: #666">规范</a> <a href="/tags/%E9%83%A8%E7%BD%B2/" style="font-size: 21.5px; color: #666">部署</a>
+    </div>
+  </section>
+
+
+            
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+              
+  <section class='widget related_posts'>
+    
+<header class='material'>
+  <div><i class="fas fa-bookmark fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;相关文章</div>
+  
+</header>
+
+    <div class="content material">
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2020\03\03\免费CDN：jsDelivr-Github\" title="免费CDN：jsDelivr + Github" rel="bookmark">免费CDN：jsDelivr + Github</a></h3></div></li></ul>
+    </div>
+  </section>
+
+
+            
+          
+        
+      
+    
+
+  
+</aside>
+
+<footer id="footer" class="clearfix">
+  
+  
+    <div class="social-wrapper">
+      
+        
+          <a href="/atom.xml"
+            class="social fas fa-rss flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="https://cloud.tencent.com/developer/column/78320"
+            class="social fab fa-skyatlas flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="https://www.jianshu.com/u/4e67854d8dc4"
+            class="social fas fa-book flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="https://juejin.im/user/5d3be668f265da1b8e70e70f"
+            class="social fab fa-viacoin flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="https://me.csdn.net/Devilli0310"
+            class="social fas fa-child flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="https://music.163.com/#/user/home?id=257666747"
+            class="social fas fa-headphones-alt flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+    </div>
+  
+  <br>
+  <div><p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+</div>
+  <div>
+    本站使用
+    <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename">Material X</a>
+    作为主题
+    
+      ，
+      总访问量为
+      <span id="busuanzi_value_site_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
+      次
+    
+    。
+  </div>
+</footer>
+<script>setLoadingBarProgress(80);</script>
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date(); 
+    function createtime() { 
+        var grt= new Date("08/10/2018 17:38:00");//在此处修改你的建站时间，格式：月/日/年 时:分:秒
+        now.setTime(now.getTime()+250); 
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+    } 
+setInterval("createtime()",250);
+</script>
+
+
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+
+  <script>
+    var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
+    var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
+    var ALGOLIA_API_KEY = "";
+    var ALGOLIA_APP_ID = "";
+    var ALGOLIA_INDEX_NAME = "";
+    var AZURE_SERVICE_NAME = "";
+    var AZURE_INDEX_NAME = "";
+    var AZURE_QUERY_KEY = "";
+    var BAIDU_API_ID = "";
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/"||"/";
+    if(!ROOT.endsWith('/'))ROOT += '/';
+  </script>
+
+<script src="//instant.page/1.2.2" type="module" integrity="sha384-2xV8M5griQmzyiY3CDqh1dn4z3llDVqZDqzjzcY+jCBCk/a5fXJmuZ/40JJAPeoU"></script>
+
+
+  <script async src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      const $reveal = $('.reveal');
+      if ($reveal.length === 0) return;
+      const sr = ScrollReveal({ distance: 0 });
+      sr.reveal('.reveal');
+    });
+  </script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+  
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
+    <script type="text/javascript">
+      $(function(){
+        if ('.cover') {
+          $('.cover').backstretch(
+          ["https://cdn.jsdelivr.net/gh/coder-lida/CDN/img/sleep.png"],
+          {
+            duration: "6000",
+            fade: "2500"
+          });
+        } else {
+          $.backstretch(
+          ["https://cdn.jsdelivr.net/gh/coder-lida/CDN/img/sleep.png"],
+          {
+            duration: "6000",
+            fade: "2500"
+          });
+        }
+      });
+    </script>
+  
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  
+    
+      
+<script src="/js/volantis.js"></script>
+
+    
+  
+  <script>
+  var GUEST_INFO = ['nick','mail','link'];
+  var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var notify = 'true' == true;
+  var verify = 'true' == true;
+  var valine = new Valine();
+  valine.init({
+    el: '#valine_container',
+    notify: notify,
+    verify: verify,
+    guest_info: guest_info,
+    
+    appId: "2QgfvOf5oXb0mJPSXMwhhCl7-gzGzoHsz",
+    appKey: "R4jnLMFsVtaBHjoyujyhXdS1",
+    placeholder: "快来评论吧~",
+    pageSize:'10',
+    avatar:'mp',
+    lang:'zh-cn',
+    highlight:'true'
+  })
+  </script>
+
+
+
+  
+<script src="/js/app.js"></script>
+
+
+
+  
+<script src="/js/search.js"></script>
+
+
+
+
+
+<!-- 复制 -->
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  let COPY_SUCCESS = "复制成功";
+  let COPY_FAILURE = "复制失败";
+  /*页面载入完成后，创建复制按钮*/
+  !function (e, t, a) {
+    /* code */
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '  <i class="fa fa-copy"></i><span>复制</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+
+      clipboard.on('success', function(e) {
+        //您可以加入成功提示
+        console.info('Action:', e.action);
+        console.info('Text:', e.text);
+        console.info('Trigger:', e.trigger);
+        success_prompt(COPY_SUCCESS);
+        e.clearSelection();
+      });
+      clipboard.on('error', function(e) {
+        //您可以加入失败提示
+        console.error('Action:', e.action);
+        console.error('Trigger:', e.trigger);
+        fail_prompt(COPY_FAILURE);
+      });
+    }
+    initCopyCode();
+
+  }(window, document);
+
+  /**
+   * 弹出式提示框，默认1.5秒自动消失
+   * @param message 提示信息
+   * @param style 提示样式，有alert-success、alert-danger、alert-warning、alert-info
+   * @param time 消失时间
+   */
+  var prompt = function (message, style, time)
+  {
+      style = (style === undefined) ? 'alert-success' : style;
+      time = (time === undefined) ? 1500 : time*1000;
+      $('<div>')
+          .appendTo('body')
+          .addClass('alert ' + style)
+          .html(message)
+          .show()
+          .delay(time)
+          .fadeOut();
+  };
+
+  // 成功提示
+  var success_prompt = function(message, time)
+  {
+      prompt(message, 'alert-success', time);
+  };
+
+  // 失败提示
+  var fail_prompt = function(message, time)
+  {
+      prompt(message, 'alert-danger', time);
+  };
+
+  // 提醒
+  var warning_prompt = function(message, time)
+  {
+      prompt(message, 'alert-warning', time);
+  };
+
+  // 信息提示
+  var info_prompt = function(message, time)
+  {
+      prompt(message, 'alert-info', time);
+  };
+
+</script>
+
+
+<!-- fancybox -->
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "";
+  $(".article-entry").find("fancybox").find("img").each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      /* 图片采用懒加载处理时,
+       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+
+<!-- 样式二（飘动的彩带） -->
+<script src="https://g.joyinshare.com/hc/piao.js" type="text/javascript"></script>
+</body>
+</html>

@@ -61,79 +61,13 @@
 
   <div class="m_search">
     <form name="searchform" class="form u-search-form">
-      <input type="text" class="input u-search-input" placeholder="" />
+      <input type="text" class="input u-search-input" placeholder="搜索" />
       <i class="icon fas fa-search fa-fw"></i>
     </form>
   </div>
 
 <div class='menu navgation'>
   <ul class='h-list'>
-    
-      
-        <li>
-          <a class="nav home" href="/"
-            
-            
-            id="home">
-            <i class='fas fa-home fa-fw'></i>&nbsp;首页
-          </a>
-        </li>
-      
-        <li>
-          <a class="nav home" href="/categories/"
-            
-              rel="nofollow"
-            
-            
-            id="categories">
-            <i class='fas fa-folder-open fa-fw'></i>&nbsp;分类
-          </a>
-        </li>
-      
-        <li>
-          <a class="nav home" href="/tags/"
-            
-              rel="nofollow"
-            
-            
-            id="tags">
-            <i class='fas fa-hashtag fa-fw'></i>&nbsp;标签
-          </a>
-        </li>
-      
-        <li>
-          <a class="nav home" href="/archives/"
-            
-              rel="nofollow"
-            
-            
-            id="archives">
-            <i class='fas fa-archive fa-fw'></i>&nbsp;归档
-          </a>
-        </li>
-      
-        <li>
-          <a class="nav home" href="/links/"
-            
-              rel="nofollow"
-            
-            
-            id="links">
-            <i class='fas fa-link fa-fw'></i>&nbsp;友链
-          </a>
-        </li>
-      
-        <li>
-          <a class="nav home" href="/about/"
-            
-              rel="nofollow"
-            
-            
-            id="about">
-            <i class='fas fa-info-circle fa-fw'></i>&nbsp;关于
-          </a>
-        </li>
-      
     
   </ul>
 </div>
@@ -206,17 +140,6 @@
                   
                   id="links">
 									<i class='fas fa-link fa-fw'></i>&nbsp;友链
-								</a>
-							</li>
-      			
-  						<li>
-								<a class="nav flat-box" href="/about/"
-                  
-                    rel="nofollow"
-                  
-                  
-                  id="about">
-									<i class='fas fa-info-circle fa-fw'></i>&nbsp;关于
 								</a>
 							</li>
       			
@@ -310,17 +233,6 @@
 							</a>
             </li>
           
-            <li>
-							<a class="nav flat-box" href="/about/"
-                
-                  rel="nofollow"
-                
-                
-                id="about">
-								<i class='fas fa-info-circle fa-fw'></i>&nbsp;关于
-							</a>
-            </li>
-          
        
       </ul>
 		</nav>
@@ -390,9 +302,9 @@
             
   
   <div class='new-meta-item category'>
-    <a href='/categories/Java/' rel="nofollow">
+    <a href='/categories/Dev/Weixin/' rel="nofollow">
       <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>Java</p>
+      <p>Dev&nbsp;/&nbsp;Weixin</p>
     </a>
   </div>
 
@@ -453,7 +365,7 @@
 
     <section class="article typo">
       <div class="article-entry" itemprop="articleBody">
-        <p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy8xMjU1MzI0OS1hY2ExNmRhNWQzNWYxMDIyLnBuZw?x-oss-process=image/format,png" alt=""></p>
+        <p><img src="https://cdn.jsdelivr.net/gh/coder-lida/CDN/img/weixin.jpg" alt=""></p>
 <a id="more"></a>
 
 <blockquote>
@@ -466,18 +378,18 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">&#x2F; 在app.js里写下以下代码</span><br><span class="line">  onLaunch () &#123;</span><br><span class="line">    if (wx.canIUse(&#39;getUpdateManager&#39;)) &#123;</span><br><span class="line">      const updateManager &#x3D; wx.getUpdateManager()</span><br><span class="line">      updateManager.onCheckForUpdate(function (res) &#123;</span><br><span class="line">        console.log(&#39;onCheckForUpdate&#x3D;&#x3D;&#x3D;&#x3D;&#39;, res)</span><br><span class="line">        &#x2F;&#x2F; 请求完新版本信息的回调</span><br><span class="line">        if (res.hasUpdate) &#123;</span><br><span class="line">          console.log(&#39;res.hasUpdate&#x3D;&#x3D;&#x3D;&#x3D;&#39;)</span><br><span class="line">          updateManager.onUpdateReady(function () &#123;</span><br><span class="line">            wx.showModal(&#123;</span><br><span class="line">              title: &#39;更新提示&#39;,</span><br><span class="line">              content: &#39;新版本已经准备好，是否重启应用？&#39;,</span><br><span class="line">              success: function (res) &#123;</span><br><span class="line">                console.log(&#39;success&#x3D;&#x3D;&#x3D;&#x3D;&#39;, res)</span><br><span class="line">                &#x2F;&#x2F; res: &#123;errMsg: &quot;showModal: ok&quot;, cancel: false, confirm: true&#125;</span><br><span class="line">                if (res.confirm) &#123;</span><br><span class="line">                  &#x2F;&#x2F; 新的版本已经下载好，调用 applyUpdate 应用新版本并重启</span><br><span class="line">                  updateManager.applyUpdate()</span><br><span class="line">                &#125;</span><br><span class="line">              &#125;</span><br><span class="line">            &#125;)</span><br><span class="line">          &#125;)</span><br><span class="line">          updateManager.onUpdateFailed(function () &#123;</span><br><span class="line">            &#x2F;&#x2F; 新的版本下载失败</span><br><span class="line">            wx.showModal(&#123;</span><br><span class="line">              title: &#39;已经有新版本了哟~&#39;,</span><br><span class="line">              content: &#39;新版本已经上线啦~，请您删除当前小程序，重新搜索打开哟~&#39;</span><br><span class="line">            &#125;)</span><br><span class="line">          &#125;)</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
 <p>小程序重新初始化时会触发onLaunch事件<br>onLaunch事件会触发在页面onShow事件之前.获取小程序更新版本可以写在onLaunch里.</p>
 <p><code>注意：在开发和体验版无法测试版本更新</code></p>
-<p>需要在开发者工具里,编译时选择”模拟更新编译”<br><img src="https://upload-images.jianshu.io/upload_images/12553249-596b037faafe349e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图片.png"></p>
-<p>(部分开发者工具版本, 每次update编译时都需要重新勾选此选项)<br>点击确定,重新编译.<br>页面会弹窗显示:<br><img src="https://upload-images.jianshu.io/upload_images/12553249-d8fce840734a0c6b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图片.png"><br>点击确定后：<br><img src="https://upload-images.jianshu.io/upload_images/12553249-28cdc47ab292f08b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图片.png"></p>
+<p>需要在开发者工具里,编译时选择”模拟更新编译”<br><img src="https://cdn.jsdelivr.net/gh/coder-lida/CDN/img/assert/weixin-1.png" alt="图片.png"></p>
+<p>(部分开发者工具版本, 每次update编译时都需要重新勾选此选项)<br>点击确定,重新编译.<br>页面会弹窗显示:<br><img src="https://cdn.jsdelivr.net/gh/coder-lida/CDN/img/assert/weixin-2.png" alt="图片.png"><br>点击确定后：<br><img src="https://cdn.jsdelivr.net/gh/coder-lida/CDN/img/assert/weixin-3.png" alt="图片.png"></p>
 <p>随着小程序的不断更新, 部分功能可能需要最新版的微信客户端才能使用. 这时候可以弹窗提示用户更新到最新版本微信</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"> if (wx.canIUse(&#39;getUpdateManager&#39;)) &#123;</span><br><span class="line">  ...</span><br><span class="line">&#125; else &#123;</span><br><span class="line">  &#x2F;&#x2F; can&#39;t use getUpdateManager</span><br><span class="line">  wx.showModal(&#123;</span><br><span class="line">        title: &#39;提示&#39;,</span><br><span class="line">        content: &#39;当前微信版本过低，无法使用该功能，请升级到最新微信版本后重试。&#39;</span><br><span class="line">   &#125;)</span><br></pre></td></tr></table></figure>
 <p>完整版本:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">onLaunch () &#123;</span><br><span class="line">    if (wx.canIUse(&#39;getUpdateManager&#39;)) &#123;</span><br><span class="line">      const updateManager &#x3D; wx.getUpdateManager()</span><br><span class="line">      updateManager.onCheckForUpdate(function (res) &#123;</span><br><span class="line">        if (res.hasUpdate) &#123;</span><br><span class="line">          updateManager.onUpdateReady(function () &#123;</span><br><span class="line">            wx.showModal(&#123;</span><br><span class="line">              title: &#39;更新提示&#39;,</span><br><span class="line">              content: &#39;新版本已经准备好，是否重启应用？&#39;,</span><br><span class="line">              success: function (res) &#123;</span><br><span class="line">                if (res.confirm) &#123;</span><br><span class="line">                  updateManager.applyUpdate()</span><br><span class="line">                &#125;</span><br><span class="line">              &#125;</span><br><span class="line">            &#125;)</span><br><span class="line">          &#125;)</span><br><span class="line">          updateManager.onUpdateFailed(function () &#123;</span><br><span class="line">            wx.showModal(&#123;</span><br><span class="line">              title: &#39;已经有新版本了哟~&#39;,</span><br><span class="line">              content: &#39;新版本已经上线啦~，请您删除当前小程序，重新搜索打开哟~&#39;</span><br><span class="line">            &#125;)</span><br><span class="line">          &#125;)</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">      wx.showModal(&#123;</span><br><span class="line">        title: &#39;提示&#39;,</span><br><span class="line">        content: &#39;当前微信版本过低，无法使用该功能，请升级到最新微信版本后重试。&#39;</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-<p>如果在onLaunch里进行请求, 这是异步请求. 如果对交互顺序有要求, 如: 版本更新–重新获取数据– 用户展示, 那么需要考虑在callback里进行重获数据.小程序启动时，正常是会热更新，下载新版本的包，下一次启动就会使用新包。但发现有更新不成功的情况发生.<br>官方回答: 策略生效跟网络环境以及发布时间等若干因素有关，会尽可能让小程序快地更新，但无法保证每次都热更新成功。<br>小程序的异步更新发生在冷启动过程. 官方不建议热更新. 原因:<br><img src="https://upload-images.jianshu.io/upload_images/12553249-69b50b7aa0385509.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图片.png"></p>
+<p>如果在onLaunch里进行请求, 这是异步请求. 如果对交互顺序有要求, 如: 版本更新–重新获取数据– 用户展示, 那么需要考虑在callback里进行重获数据.小程序启动时，正常是会热更新，下载新版本的包，下一次启动就会使用新包。但发现有更新不成功的情况发生.<br>官方回答: 策略生效跟网络环境以及发布时间等若干因素有关，会尽可能让小程序快地更新，但无法保证每次都热更新成功。<br>小程序的异步更新发生在冷启动过程. 官方不建议热更新. 原因:<br><img src="https://cdn.jsdelivr.net/gh/coder-lida/CDN/img/assert/weixin-4.png" alt="图片.png"></p>
 
       </div>
       
         <br>
-        <p> <a href="https://www.jianshu.com/u/4e67854d8dc4" target="_blank" rel="noopener">简书</a> <br> <a href="https://cloud.tencent.com/developer/column/78320" target="_blank" rel="noopener">腾讯云社区</a> <br>  <a href="https://juejin.im/user/5d3be668f265da1b8e70e70f" target="_blank" rel="noopener">掘金</a><br> <a href="https://me.csdn.net/Devilli0310" target="_blank" rel="noopener">CSDN</a><br> 微信公共号：<img src="/asset/wx/wx.jpg" alt=""></p>
+        <p> <a href="https://www.jianshu.com/u/4e67854d8dc4" target="_blank" rel="noopener">简书</a> <br> <a href="https://cloud.tencent.com/developer/column/78320" target="_blank" rel="noopener">云+社区</a> <br>  <a href="https://juejin.im/user/5d3be668f265da1b8e70e70f" target="_blank" rel="noopener">掘金</a><br> <a href="https://me.csdn.net/Devilli0310" target="_blank" rel="noopener">CSDN</a><br> 微信公共号：<img src="/asset/wx/wx.jpg" alt=""></p>
 
       
       
@@ -489,10 +401,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-01-09T17:53:15+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-04-10T11:41:27+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2020年1月9日</p>
+    <p>更新于 2020年4月10日</p>
   </a>
 </div>
 
@@ -518,7 +430,7 @@
           
           >
           
-            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qq.png">
+            <img src="https://cdn.jsdelivr.net/gh/coder-lida/CDN/img/qq.png">
           
         </a>
       
@@ -530,7 +442,7 @@
           
           >
           
-            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qzone.png">
+            <img src="https://cdn.jsdelivr.net/gh/coder-lida/CDN/img/qzone.png">
           
         </a>
       
@@ -542,7 +454,7 @@
           
           >
           
-            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/weibo.png">
+            <img src="https://cdn.jsdelivr.net/gh/coder-lida/CDN/img/weibo.png">
           
         </a>
       
@@ -575,7 +487,7 @@
                           
                               
                               <h6 class="tags">
-                                  <a class="tag" href="/tags/Java/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> Java</a>
+                                  <a class="tag" href="/tags/Java%E5%9F%BA%E7%A1%80/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> Java基础</a>
                               </h6>
                           
                       </span>
@@ -612,7 +524,21 @@
 
 
 
-  
+  <article class="post white-box comments">
+    <section class="article typo">
+      <h4><i class="fas fa-comments fa-fw" aria-hidden="true"></i>&nbsp;评论</h4>
+      
+      
+      
+      
+        <section id="comments">
+          <div id="valine_container" class="valine_thread">
+            <i class="fas fa-spinner fa-spin fa-fw"></i>
+          </div>
+        </section>
+      
+    </section>
+  </article>
 
 
 
@@ -646,7 +572,7 @@
   <div class='content material'>
     
       <div class='avatar'>
-        <img class='avatar' src='https://s2.ax1x.com/2019/12/13/QcW5TI.png'/>
+        <img class='avatar' src='https://cdn.jsdelivr.net/gh/coder-lida/CDN/img/logoImg.png'/>
       </div>
     
     
@@ -815,12 +741,38 @@
       
         <li><a class="flat-box" title="/" href="/"
           
+            rel="nofollow"
+          
           
           id="home">
           
-            <i class="fas fa-clock fa-fw" aria-hidden="true"></i>
+            <i class="fas fa-home fa-fw" aria-hidden="true"></i>
           
-          近期文章
+          首页
+        </a></li>
+      
+        <li><a class="flat-box" title="/categories/" href="/categories/"
+          
+            rel="nofollow"
+          
+          
+          id="categories">
+          
+            <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+          
+          分类
+        </a></li>
+      
+        <li><a class="flat-box" title="/tags/" href="/tags/"
+          
+            rel="nofollow"
+          
+          
+          id="tags">
+          
+            <i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>
+          
+          标签
         </a></li>
       
         <li><a class="flat-box" title="/archives/" href="/archives/"
@@ -832,19 +784,19 @@
           
             <i class="fas fa-archive fa-fw" aria-hidden="true"></i>
           
-          文章归档
+          归档
         </a></li>
       
-        <li><a class="flat-box" title="/about/" href="/about/"
+        <li><a class="flat-box" title="/links/" href="/links/"
           
             rel="nofollow"
           
           
-          id="about">
+          id="links">
           
-            <i class="fas fa-info-circle fa-fw" aria-hidden="true"></i>
+            <i class="fas fa-link fa-fw" aria-hidden="true"></i>
           
-          关于小站
+          友链
         </a></li>
       
     </ul>
@@ -897,13 +849,25 @@
     <div class='content material'>
       <ul class="entry">
         
-          <li><a class="flat-box" title="/categories/Java/" href="/categories/Java/"><div class='name'>Java</div><div class='badge'>(22)</div></a></li>
+          <li><a class="flat-box" title="/categories/Dev/" href="/categories/Dev/"><div class='name'>Dev</div><div class='badge'>(66)</div></a></li>
         
-          <li><a class="flat-box" title="/categories/JavaScript/" href="/categories/JavaScript/"><div class='name'>JavaScript</div><div class='badge'>(1)</div></a></li>
+          <li><a class="flat-box child" title="/categories/Dev/Container/" href="/categories/Dev/Container/"><div class='name'>Container</div><div class='badge'>(5)</div></a></li>
         
-          <li><a class="flat-box" title="/categories/SpringBoot/" href="/categories/SpringBoot/"><div class='name'>SpringBoot</div><div class='badge'>(1)</div></a></li>
+          <li><a class="flat-box child" title="/categories/Dev/DataBase/" href="/categories/Dev/DataBase/"><div class='name'>DataBase</div><div class='badge'>(2)</div></a></li>
         
-          <li><a class="flat-box" title="/categories/%E5%BE%AE%E6%9C%8D%E5%8A%A1/" href="/categories/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"><div class='name'>微服务</div><div class='badge'>(4)</div></a></li>
+          <li><a class="flat-box child" title="/categories/Dev/Frame/" href="/categories/Dev/Frame/"><div class='name'>Frame</div><div class='badge'>(13)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/Dev/Front/" href="/categories/Dev/Front/"><div class='name'>Front</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/Dev/Hexo/" href="/categories/Dev/Hexo/"><div class='name'>Hexo</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/Dev/Java/" href="/categories/Dev/Java/"><div class='name'>Java</div><div class='badge'>(34)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/Dev/Linux/" href="/categories/Dev/Linux/"><div class='name'>Linux</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/Dev/Tools/" href="/categories/Dev/Tools/"><div class='name'>Tools</div><div class='badge'>(6)</div></a></li>
+        
+          <li><a class="flat-box child" title="/categories/Dev/Weixin/" href="/categories/Dev/Weixin/"><div class='name'>Weixin</div><div class='badge'>(1)</div></a></li>
         
       </ul>
     </div>
@@ -954,7 +918,7 @@
 </header>
 
     <div class='content material'>
-      <a href="/tags/Consul/" style="font-size: 14px; color: #999">Consul</a> <a href="/tags/HashMap/" style="font-size: 14px; color: #999">HashMap</a> <a href="/tags/JWT/" style="font-size: 14px; color: #999">JWT</a> <a href="/tags/Java/" style="font-size: 14px; color: #999">Java</a> <a href="/tags/Spring/" style="font-size: 14px; color: #999">Spring</a> <a href="/tags/SpringBoot/" style="font-size: 19px; color: #777">SpringBoot</a> <a href="/tags/SpringCloud/" style="font-size: 14px; color: #999">SpringCloud</a> <a href="/tags/Thread/" style="font-size: 14px; color: #999">Thread</a> <a href="/tags/Tomcat/" style="font-size: 14px; color: #999">Tomcat</a> <a href="/tags/enum/" style="font-size: 14px; color: #999">enum</a> <a href="/tags/file/" style="font-size: 14px; color: #999">file</a> <a href="/tags/javaScript/" style="font-size: 14px; color: #999">javaScript</a> <a href="/tags/json/" style="font-size: 14px; color: #999">json</a> <a href="/tags/shiro/" style="font-size: 14px; color: #999">shiro</a> <a href="/tags/token/" style="font-size: 14px; color: #999">token</a> <a href="/tags/%E5%8F%8D%E5%B0%84/" style="font-size: 14px; color: #999">反射</a> <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/" style="font-size: 14px; color: #999">小程序</a> <a href="/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/" style="font-size: 24px; color: #555">微服务</a> <a href="/tags/%E6%89%93%E5%8C%85%E9%83%A8%E7%BD%B2/" style="font-size: 14px; color: #999">打包部署</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" style="font-size: 14px; color: #999">数据类型</a> <a href="/tags/%E7%88%AC%E8%99%AB/" style="font-size: 14px; color: #999">爬虫</a> <a href="/tags/%E8%A7%84%E8%8C%83/" style="font-size: 14px; color: #999">规范</a> <a href="/tags/%E9%83%A8%E7%BD%B2/" style="font-size: 14px; color: #999">部署</a>
+      <a href="/tags/CAS/" style="font-size: 14px; color: #999">CAS</a> <a href="/tags/Consul/" style="font-size: 14px; color: #999">Consul</a> <a href="/tags/ECharts/" style="font-size: 14px; color: #999">ECharts</a> <a href="/tags/Enum/" style="font-size: 14px; color: #999">Enum</a> <a href="/tags/File/" style="font-size: 14px; color: #999">File</a> <a href="/tags/Git/" style="font-size: 21.5px; color: #666">Git</a> <a href="/tags/HashMap/" style="font-size: 14px; color: #999">HashMap</a> <a href="/tags/Hexo/" style="font-size: 16.5px; color: #888">Hexo</a> <a href="/tags/Http/" style="font-size: 14px; color: #999">Http</a> <a href="/tags/IO/" style="font-size: 14px; color: #999">IO</a> <a href="/tags/JVM/" style="font-size: 19px; color: #777">JVM</a> <a href="/tags/JWT/" style="font-size: 14px; color: #999">JWT</a> <a href="/tags/Java%E5%9F%BA%E7%A1%80/" style="font-size: 21.5px; color: #666">Java基础</a> <a href="/tags/Json/" style="font-size: 14px; color: #999">Json</a> <a href="/tags/Lambda/" style="font-size: 14px; color: #999">Lambda</a> <a href="/tags/Maven/" style="font-size: 14px; color: #999">Maven</a> <a href="/tags/MyBatis/" style="font-size: 16.5px; color: #888">MyBatis</a> <a href="/tags/Mysql/" style="font-size: 14px; color: #999">Mysql</a> <a href="/tags/Nginx/" style="font-size: 14px; color: #999">Nginx</a> <a href="/tags/Sentinel/" style="font-size: 14px; color: #999">Sentinel</a> <a href="/tags/Shiro/" style="font-size: 14px; color: #999">Shiro</a> <a href="/tags/Spring/" style="font-size: 14px; color: #999">Spring</a> <a href="/tags/SpringBoot/" style="font-size: 19px; color: #777">SpringBoot</a> <a href="/tags/SpringCloud/" style="font-size: 14px; color: #999">SpringCloud</a> <a href="/tags/Thread/" style="font-size: 14px; color: #999">Thread</a> <a href="/tags/Timer/" style="font-size: 14px; color: #999">Timer</a> <a href="/tags/Token/" style="font-size: 14px; color: #999">Token</a> <a href="/tags/Tomcat/" style="font-size: 16.5px; color: #888">Tomcat</a> <a href="/tags/java14/" style="font-size: 21.5px; color: #666">java14</a> <a href="/tags/javaScript/" style="font-size: 14px; color: #999">javaScript</a> <a href="/tags/%E5%8A%A0%E5%AF%86%E8%A7%A3%E5%AF%86/" style="font-size: 16.5px; color: #888">加密解密</a> <a href="/tags/%E5%8F%8D%E5%B0%84/" style="font-size: 14px; color: #999">反射</a> <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/" style="font-size: 14px; color: #999">小程序</a> <a href="/tags/%E5%B9%B6%E5%8F%91/" style="font-size: 16.5px; color: #888">并发</a> <a href="/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/" style="font-size: 24px; color: #555">微服务</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 14px; color: #999">数据库</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" style="font-size: 14px; color: #999">数据类型</a> <a href="/tags/%E7%88%AC%E8%99%AB/" style="font-size: 14px; color: #999">爬虫</a> <a href="/tags/%E8%A7%84%E8%8C%83/" style="font-size: 21.5px; color: #666">规范</a> <a href="/tags/%E9%83%A8%E7%BD%B2/" style="font-size: 21.5px; color: #666">部署</a>
     </div>
   </section>
 
@@ -1014,7 +978,7 @@
 </header>
 
     <div class="content material">
-      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2020\01\01\微服务注册中心为什么要使用Consul？\" title="微服务注册中心为什么要使用Consul？" rel="bookmark">微服务注册中心为什么要使用Consul？</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2019\07\26\GSON搞定任何JSON数据\" title="GSON搞定任何JSON数据" rel="bookmark">GSON搞定任何JSON数据</a></h3></div></li></ul>
+      
     </div>
   </section>
 
@@ -1174,6 +1138,30 @@ setInterval("createtime()",250);
 
 
 
+  
+  
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
+    <script type="text/javascript">
+      $(function(){
+        if ('.cover') {
+          $('.cover').backstretch(
+          ["https://cdn.jsdelivr.net/gh/coder-lida/CDN/img/sleep.png"],
+          {
+            duration: "6000",
+            fade: "2500"
+          });
+        } else {
+          $.backstretch(
+          ["https://cdn.jsdelivr.net/gh/coder-lida/CDN/img/sleep.png"],
+          {
+            duration: "6000",
+            fade: "2500"
+          });
+        }
+      });
+    </script>
+  
 
 
 
@@ -1181,6 +1169,39 @@ setInterval("createtime()",250);
 
 
 
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  
+    
+      
+<script src="/js/volantis.js"></script>
+
+    
+  
+  <script>
+  var GUEST_INFO = ['nick','mail','link'];
+  var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var notify = 'true' == true;
+  var verify = 'true' == true;
+  var valine = new Valine();
+  valine.init({
+    el: '#valine_container',
+    notify: notify,
+    verify: verify,
+    guest_info: guest_info,
+    
+    appId: "2QgfvOf5oXb0mJPSXMwhhCl7-gzGzoHsz",
+    appKey: "R4jnLMFsVtaBHjoyujyhXdS1",
+    placeholder: "快来评论吧~",
+    pageSize:'10',
+    avatar:'mp',
+    lang:'zh-cn',
+    highlight:'true'
+  })
+  </script>
 
 
 
@@ -1306,5 +1327,8 @@ setInterval("createtime()",250);
 
 
   <script>setLoadingBarProgress(100);</script>
+
+<!-- 样式二（飘动的彩带） -->
+<script src="https://g.joyinshare.com/hc/piao.js" type="text/javascript"></script>
 </body>
 </html>
